@@ -18,7 +18,6 @@ BLE Smart Traffic integrates BLE communication between a Raspberry Pi3B-controll
 
 
 ## Overview
-Describe the objective of your project, the problem it solves, and the main features.
 
 This project consists of two main types of devices with microprocessors. A small smart vehicle will receive a BLE signal emitted from our other device, known as the traffic light. If the traffic light is green, the DX-BT27-A central module will send the message decoded "GREEN" to its paired DX-BT27-A peripheral module such that it will tell the cars they can continue driving, with separate signals and logic for the other traffic states. The vehicles remain autonomous, with the entire system composed of 3 mini-cars and 1 traffic light. An HC-SR04 ultrasonic ranger is also attached to each car to ensure no collisions occur between the smart vehicles. The overall objective is to simulate a small traffic system and allow for efficient routing of autonomous vehicles in a way that does not require computer vision. 
 
@@ -66,6 +65,6 @@ In order to run this system, we used the Arduino IDE to compile the C++ scripts 
 
 ## Results and Demonstration
 
-[![Demonstration Video](https://youtube.com)](https://www.youtube.com/watch?v=APwNRAdVClQ)
+[![Demonstration Video](https://ytimg.com)](https://www.youtube.com/watch?v=APwNRAdVClQ)
 
 As can be seen in the demonstration video, we were able to successfully influence the speed of the wheels on the smart vehicle based on the BLE signal received, and the cars stop when the ultrasonic sensor detects an object in front of them. Multiple cars are able to be run simultaneously if multiple DX-BT27-A central modules are attached to the same Raspberry Pi. This procedure is started in TrafficLight/main.py when the variable ser2 is initiated on line 6 and can be expanded to as many serial ports as your microprocessor contains. In order to simulate a more realistic traffic flow system, the traffic light would need to know the smart cars relative positioning, which would require at least 3 central modules to triangulate from via RSSI readings. This, along with testing the reliability of the cars receiving BLE signals at fast speeds, are the next steps towards innovating in our smart traffic system. 
